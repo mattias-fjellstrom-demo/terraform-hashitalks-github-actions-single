@@ -1,6 +1,6 @@
 variables {
-  location            = "{{LOCATION}}"
-  name_suffix         = "hashitalks-${{LOCATION}}"
+  location    = "{{LOCATION}}"
+  name_suffix = "hashitalks-${{LOCATION}}"
 }
 
 provider "azurerm" {
