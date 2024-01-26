@@ -1,0 +1,20 @@
+variables {
+  resource_group_name = "rg-terraform-test"
+  location            = "swedencentral"
+  name_suffix         = "tftesting"
+}
+
+run "setup" {
+  module {
+    source  = "app.terraform.io/mattias-fjellstrom/resource-group-module/hashitalks"
+    version = "{{VERSION}}"
+  }
+}
+
+run "create_storage_account" {
+  command = apply
+  assert {
+    condition     = azurerm_storage_account.this.enable_https_traffic_only
+    error_message = "Storage account is created with invalid settings"
+  }
+}
