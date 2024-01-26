@@ -22,7 +22,9 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
           sed 's/{{VERSION}}/${{ matrix.version }}/g; s/{{LOCATION}}/${{ matrix.location }}/g' \
-            templates/main.tftest.hcl.template > tests/main.tftest.hcl 
+            templates/main.tftest.hcl.template > tests/main.tftest.hcl
+      - run: |
+          cat tests/main.tftest.hcl
       - uses: hashicorp/setup-terraform@v2
         with:
           terraform_wrapper: false

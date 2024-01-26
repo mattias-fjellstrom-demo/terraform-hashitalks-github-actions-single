@@ -12,7 +12,7 @@ provider "azurerm" {
   features {}
 }
 
-run "setup" {
+run "create" {
   module {
     source  = "app.terraform.io/mattias-fjellstrom/resource-group-module/hashitalks"
     version = "{{VERSION}}"
