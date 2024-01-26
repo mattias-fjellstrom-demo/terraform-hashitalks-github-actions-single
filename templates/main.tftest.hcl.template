@@ -1,6 +1,6 @@
 variables {
   location    = "{{LOCATION}}"
-  name_suffix = "hashitalks-${{LOCATION}}"
+  name_suffix = "hashitalks-{{LOCATION}}"
   tags        = {
     team        = "HashiTalks Team"
     project     = "HashiTalks Project"
