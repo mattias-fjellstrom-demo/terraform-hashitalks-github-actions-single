@@ -1,10 +1,12 @@
 variables {
   location    = "{{LOCATION}}"
-  name_suffix = "hashitalks-{{LOCATION}}"
+  name_suffix = "hashitalks-${uuid()}"
   tags        = {
     team        = "HashiTalks Team"
     project     = "HashiTalks Project"
     cost_center = "1234"
+    version     = "{{VERSION}}"
+    location    = "{{LOCATION}}"
   }
 }
 
