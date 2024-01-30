@@ -12,8 +12,9 @@ jobs:
       fail-fast: false
       matrix:
         location: ["swedencentral", "westeurope", "northeurope"]
-        version: ["1.0.1"]
+        version: ["1.0.1", "2.0.0", "3.0.0"]
     runs-on: ubuntu-latest
+    name: Version ${{ matrix.version }}, Location ${{ matrix.location }}
     steps:
       - name: Azure login
         uses: azure/login@v1
